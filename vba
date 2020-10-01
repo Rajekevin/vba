@@ -114,17 +114,19 @@ End Sub
 
 
 Sub Title()
-    Rows(2).EntireRow.Delete
-    Range("A2").EntireRow.Insert
-    Range("A1:M1").Interior.Color = RGB(66, 185, 244)  'Background Color
-    Range("A1:M1").Font.Bold = True                    'Bold
-    Range("A1:M1").Font.Italic = True                  'Italic
-    Range("A1:M1").Font.Color = RGB(255, 255, 255)     'Header color white
+    Dim W as worksheet
+    Set W = thisworkbook.activesheet
+    W.Rows(2).EntireRow.Delete
+    W.Range("A2").EntireRow.Insert
+    W.Range("A1:M1").Interior.Color = RGB(66, 185, 244)  'Background Color
+    W.Range("A1:M1").Font.Bold = True                    'Bold
+    W.Range("A1:M1").Font.Italic = True                  'Italic
+    W.Range("A1:M1").Font.Color = RGB(255, 255, 255)     'Header color white
     
-    Range("A1").Value = "Nom"
-    Range("B1").Value = "Prenom"
-    Range("C1").Value = "Date de Naissance"
-    Range("D1").Value = "Ouverture"
-    Range("E1").Value = "Statut"
+    W.Range("A1").Value = "Nom"
+    W.Range("B1").Value = "Prenom"
+    W.Range("C1").Value = "Date de Naissance"
+    W.Range("D1").Value = "Ouverture"
+    W.Range("E1").Value = "Statut"
 
 End Sub
